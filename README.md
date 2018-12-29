@@ -1,2 +1,2 @@
-# item-catalog-application
+# Item Catalog Application
 Udacity Project - Item Catalog Application

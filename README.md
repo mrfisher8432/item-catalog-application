@@ -15,7 +15,7 @@ Follow these instructions in order to make this test this application.
 
 #### Virtual Machine
 
-Please fork this repository.
+Please fork this repository into your `vagrant/catalog` directory.
 
 On your terminal type this command: `cd vagrant/catalog`
 

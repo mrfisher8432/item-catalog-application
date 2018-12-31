@@ -236,7 +236,9 @@ def newCategory():
         session.commit()
         return redirect(url_for('showMain'))
     else:
-        return render_template('new_category.html', user=login_session['email'])
+        return render_template(
+            'new_category.html', user=login_session['email']
+        )
 
 
 @app.route('/category/<int:category_id>')
@@ -245,7 +247,9 @@ def showCategory(category_id):
     items = session.query(Item).filter_by(category_id=category.id)
     creator = getUserInfo(category.user_id)
     if 'username' not in login_session:
-        return render_template('public_categories.html', category=category, items=items)
+        return render_template(
+            'public_categories.html', category=category, items=items
+        )
     elif creator.id == login_session['user_id']:
         return render_template(
             'category_items.html', category=category, items=items,

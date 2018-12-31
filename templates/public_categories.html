@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+
+{% with messages = get_flashed_messages() %}
+	{% if messages %}
+		<div class="alert alert-info alert-dismissible" role="alert">
+			{% for message in messages %}
+				{{ message }}
+			{% endfor %}
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
+	{% endif %}
+{% endwith %}
+
+<div class="row">
+	<div class="col-md-12">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+			  <h3>{{category.name}}</h3>
+			</div>
+			<div class="panel-body">
+				<ul class="list-group">
+					{% for item in items %}
+					<li class="list-group-item">
+						<a href="{{url_for('showItem', item_id = item.id)}}">{{item.name}} </a>
+						<span class="badge">${{item.price}}</span>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

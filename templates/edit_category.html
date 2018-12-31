@@ -12,7 +12,7 @@
                 <form action="{{ url_for('editCategory',category_id = category.id)}}" method="post">
 					<div class="form-group">
 						<label for="name">Name:</label>
-						<input type ="text" class="form-control" name="name" value="{{category.name }}">
+						<input type="text" required="required" class="form-control" name="name" value="{{category.name }}">
 					</div>
 					<button type="submit" class="btn btn-success" id="submit" type="submit">Update</button>
 					<a href="{{url_for('showCategory', category_id = category.id)}}" role="button" class="btn btn-danger">Cancel</a>
